@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>轮播图</title>
+    <style>
+
+        #ball{
+            position: absolute;
+            left:0px;
+            top:350px; 
+            width: 20px;
+            height: 20px;
+            background-color:green;
+            border-radius: 50%;
+        }
+
+    </style>
+</head>
+<body>
+    <input type="button" value="  走 " id="btnGo">
+    <div id="ball"></div>
+
+</body>
+</html>
+<script src="js/jquery-3.2.1.min.js"></script>
+<script>
+    
+// y^2 = 2px;//经过坐标中心的右开口的抛物线公式
+
+function pao(){
+    let p = 100;
+    let x = 0;
+
+    let myTimer = setInterval(()=>{
+         //一、数据处理
+        //1、计算数据
+        x++;
+        y = Math.sqrt(2*p*x);
+        //2、边界处理
+        if(x>=400){
+            clearInterval(myTimer);
+        }
+  
+        //二、外观处理
+        $("#ball").css({
+            left:x,
+            top:-y + 350
+        });
+    },10);
+}
+
+$(function(){
+    $("#btnGo").click(function(){
+        pao();
+    });
+})
+
+
+</script>

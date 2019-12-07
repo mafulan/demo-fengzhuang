@@ -1,0 +1,6 @@
+javascript_this的理解
+https://blog.csdn.net/jiang7701037/article/details/79153906
+
+this转移
+
+https://blog.csdn.net/jiang7701037/article/details/79314864
